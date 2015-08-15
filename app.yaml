@@ -1,0 +1,38 @@
+application: robertmillerdesigns
+version: 7
+runtime: python
+api_version: 1
+
+default_expiration: "30d"
+
+handlers:
+- url: /img
+  static_dir: content/images
+
+- url: /aud
+  static_dir: content/audio
+
+- url: /dat
+  static_dir: content/data
+  
+- url: /.*
+  script: main.py
+  
+error_handlers:
+- file: content/templates/404.html
+  
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.swf$
+- ^(.*/)?.*\.sbk$
+- ^(.*/)?.*\.swi$
+- ^(.*/)?.*\.atii$
+- ^(.*/)?source\/.*

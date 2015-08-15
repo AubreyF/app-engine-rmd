@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="Author" content="Aubrey Falconer (.com)" />
+        <title>{{ title }}</title>
+		<link rel="stylesheet" href="/dat/newslide/css/slideshow.css">
+		<script src="/dat/slideshow.js"></script>
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=1010" />
+    </head>
+    <body>
+		<noscript>{{ images }}</noscript>
+		<div id="show" class="slideshow"></div>
+		<script type="text/javascript">//<![CDATA[
+			if(history.length > 1 && window.parent.frames.length == 0) document.write('<a href="/#gallery" id="linkclose" onclick="history.back();return false;">&laquo; Back To Robert Miller\'s Gallery</a>');
+			else if(window.parent.frames.length == 0) document.write('<a href="/#gallery" id="linkclose" onclick="self.close();return false;">&laquo; Return To Robert Miller\'s Gallery</a>');
+			window.addEvent('domready', function(){ new Slideshow('show', [{{ data }}], { controller: { duration: 250, transition: Fx.Transitions.Elastic.easeOut}, hu: '/img/gallery/', fast:true, color: '#000000', delay: 3500, duration: 1000, overlap: false, resize: 'fit', center: true, height: 666, thumbnails: {columns: null, position: null, rows: null}, scroll: null, width: 1000, replace: [/(.*)/, '$1.jpg'] }); });
+		//]]></script>
+    </body>
+</html>
