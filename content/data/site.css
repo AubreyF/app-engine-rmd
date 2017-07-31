@@ -255,6 +255,7 @@ a:hover, a.active {
 .homebl .i:before {
     content:'';
     box-shadow: inset 0px 0px 20px 8px black;
+    border: 1px solid black;
     z-index:30;
 }​
 
