@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import os
 import webapp2
-from django.template.loader import render_to_string
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+from django.template.loader import render_to_string
 
 SLIDE_LIST = {
     'tipplewood': 3,

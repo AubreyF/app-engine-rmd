@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
 @font-face {
     font-family: 'Canterbury Sans';
     src: url('/dat/canterbury_sans.ttf');
 }
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
 body {
     background-color: #000000;
-    font-size: 13px;
-    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-family: 'Josefin Sans', 'Open Sans', 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
     color: #FFFFFF;
 }
 
