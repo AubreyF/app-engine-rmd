@@ -1,10 +1,10 @@
 runtime: python27
 api_version: 1
-threadsafe: false
+threadsafe: true
 
 libraries:
 - name: django
-  version: "1.2"
+  version: 1.11
 
 default_expiration: "30d"
 
@@ -25,6 +25,7 @@ error_handlers:
 - file: content/templates/404.html
 
 skip_files:
+- ^env/.*$
 - ^(.*/)?app\.yaml
 - ^(.*/)?app\.yml
 - ^(.*/)?index\.yaml
