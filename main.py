@@ -10,7 +10,7 @@ SLIDE_LIST = {'tipplewood': 3, 'willowbend': 13, 'woodrun4': 9, 'woodrun5': 6, '
               'hombeyhills': 11, 'ecocity': 5, 'seattle': 0, 'sterlingchandler': 5, 'woodrun7': 5, 'snowmassclub': 8, 'casadeemdeko': 3, 'puertovallarta': 0, 'illinois': 5,
               'sherekhan': 9, 'source': 0, 'kahala': 4, 'maunakea': 5, 'waterford': 13, 'indiana': 7, 'black_and_white_sketches': 10, 'wilshire': 7, 'kiddisland': 2, 'hahn': 5,
               'palmsprings': 2, 'orcas': 5, 'snowmassranch': 4, 'snowmass7': 7, 'thepark': 7, 'arrowpoint': 2, 'medina': 8, 'robertrose': 8, 'woodrun': 0, 'ladera': 7,
-              'makanikaimarina': 4, 'napavalley': 5, 'lot8': 5, 'sandpoint': 4, 'stoneybrook': 2, 'waiikii': 3, 'lot2': 5, 'lot1': 8, 'hawaii': 6, 'exotica': 5, 'serenity': 12}
+              'makanikaimarina': 4, 'napavalley': 5, 'lot8': 5, 'sandpoint': 4, 'stoneybrook': 2, 'waiikii': 3, 'lot2': 5, 'lot1': 8, 'hawaii': 6, 'exotica': 5, 'serenity': 12, 'tahoe': 13}
 
 
 class MainPage(webapp2.RequestHandler):
