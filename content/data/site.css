@@ -252,29 +252,48 @@ a:hover, a.active {
     padding-left: 80px;
 }
 
-.homebl .i:before {
-    content:'';
+.framed_image {
+    width: 150px;
+    height: 150px;
+    padding: 1px;
+    position: relative;
+    margin: auto;
+}
+
+.framed_image:before {
+    position: absolute;
+    content: '';
     box-shadow: inset 0px 0px 20px 8px black;
     border: 1px solid black;
-    z-index:30;
-}​
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+}
 
- .homebl .i, .homebl .i:before, .homebl img {
-     position: absolute;
-     left:45px;
-     width:150px;
-     height:150px;
- }
+.homebl .i:before {
+    content: '';
+    box-shadow: inset 0px 0px 20px 8px black;
+    border: 1px solid black;
+    z-index: 30;
+}
+
+​
+.homebl .i, .homebl .i:before, .homebl img {
+    position: absolute;
+    left: 45px;
+    width: 150px;
+    height: 150px;
+}
 
 .homebl .i {
     position: relative;
-    height:150px;
+    height: 150px;
     margin-bottom: 5px;
 }
 
 .homebl img {
     width: auto;
-    clip: rect(0px,150px,150px,0px);
+    clip: rect(0px, 150px, 150px, 0px);
 }
 
 .homebl .p, .homebl .s {

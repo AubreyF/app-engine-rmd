@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 import os
-import webapp2
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+
+import webapp2
+
+import django
 from django.template.loader import render_to_string
+
+django.setup()
 
 SLIDE_LIST = {
     'arrowpoint': 9,
@@ -71,6 +76,7 @@ SLIDE_LIST = {
 class MainPage(webapp2.RequestHandler):
     def get(self):
         template_values = {
+            'cache_buster': '?v=' + os.environ['CURRENT_VERSION_ID'],
         }
         self.response.out.write(render_to_string('index.html', template_values))
         self.response.headers.add_header('Cache-Control', 'max-age=3600')
@@ -83,7 +89,7 @@ class NotFound(webapp2.RequestHandler):
 
 
 class SlideShow(webapp2.RequestHandler):
-    def get(self, title, args=""):
+    def get(self, title="", images=""):
 
         # Init
         title = title.strip('/"\'\\');  # Disable directory traversal hacking...
@@ -92,23 +98,23 @@ class SlideShow(webapp2.RequestHandler):
         data = ""
 
         # Generate sequential image list
-        if (args == ""):
+        if images == "":
             while i < SLIDE_LIST[title]:
                 i += 1
-                img = '%s/%d' % (title, i);
-                imgs += '<img id="slide-%d" src="/img/gallery/%s.jpg" />' % (i, img)
-                if (data != ""): data += ', ';
-                data += "'%s.jpg'" % (img,)
+                img = '%s/%d' % (title, i)
+                imgs += ('<img id="slide-%d" src="/img/gallery/%s.jpg?v=' + os.environ['CURRENT_VERSION_ID'] + '" />') % (i, img)
+                if (data != ""): data += ', '
+                data += ("'%s.jpg?v=" + os.environ['CURRENT_VERSION_ID'] + "'") % (img,)
                 # thumbs += '<li><a href="#slide-%d"><img src="/img/gallery/%s.jpg" width="50" height="40" /></a></li>' % (i, img)
 
         else:
             # Generate custom image list
-            for img in args.split('-'):
+            for img in images.split('-'):
                 i += 1
-                img = title + "/" + img;
-                imgs += '<img id="slide-%d" src="/img/gallery/%s.jpg" />' % (i, img)
-                if (data != ""): data += ', ';
-                data += "'%s.jpg'" % (img,)
+                img = title + "/" + img
+                imgs += ('<img id="slide-%d" src="/img/gallery/%s.jpg?v=' + os.environ['CURRENT_VERSION_ID'] + '" />') % (i, img)
+                if data != "": data += ', '
+                data += ("'%s.jpg?v=" + os.environ['CURRENT_VERSION_ID'] + "'") % (img,)
                 # thumbs += '<li><a href="#slide-%d"><img src="/img/gallery/%s.jpg" width="50" height="40" /></a></li>' % (i, img)
 
         # Generate page
