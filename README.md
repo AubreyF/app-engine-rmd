@@ -23,7 +23,7 @@ gcloud auth login
 gcloud config set project rmd2-1037
 
 # Production Deployment
-gcloud app deploy app.yaml index.yaml --project rmd2-1037 
+gcloud app deploy app.yaml index.yaml --project rmd2-1037
 
 # Visit Production Site
 gcloud app browse
