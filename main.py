@@ -41,7 +41,7 @@ SLIDE_LIST = {
     'sarasota': 4,
     'seattle': 0,
     'sellekhawaii': 1,
-    'serenity': 12,
+    'serenity': 26,
     'sherekhan': 9,
     'snowmass7': 6,
     'snowmassclub': 8,
