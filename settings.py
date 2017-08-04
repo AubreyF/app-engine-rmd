@@ -5,9 +5,6 @@ PROJECT_ROOT = os.path.dirname(__file__)
 
 SECRET_KEY = '8lu*6g0lg)9z022shmi1jcgihb*19kj!ba+a$ehk)xt)x%rxgb$i1'
 
-import django
-django.setup()
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
